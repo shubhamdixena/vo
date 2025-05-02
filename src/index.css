@@ -1,0 +1,167 @@
+@import "./styles/fonts.css";
+/* Remove the non-existent Google Font imports and use local fonts */
+@font-face {
+  font-family: "Kazimir";
+  src: url("/public-assets-fonts/KazimirText-Book.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: local("Proxima Nova"), local("ProximaNova"), local("Inter"), local("Montserrat");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Base colors */
+  --background: 0 0% 100%;
+  --foreground: 0 0% 10.6%;
+
+  /* Charity water colors */
+  --charity-yellow: 56 100% 50%;
+  --charity-teal: 180 100% 27.1%;
+  --charity-blue: 216 100% 60%;
+  --charity-black: 0 0% 10.6%;
+
+  /* UI colors */
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 10.6%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 10.6%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --primary: 56 100% 50%;
+  --primary-foreground: 0 0% 10.6%;
+  --secondary: 60 4.8% 95.9%;
+  --secondary-foreground: 24 9.8% 10%;
+  --accent: 60 4.8% 95.9%;
+  --accent-foreground: 24 9.8% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 0 0% 10.6%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-white text-gray-900 min-h-screen font-proxima;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-kazimir;
+  }
+}
+
+@layer components {
+  .donation-option {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .donation-option:hover {
+    @apply transform -translate-y-0.5;
+  }
+
+  .donation-option.selected {
+    @apply bg-charity-yellow text-charity-black border-charity-yellow;
+  }
+
+  .prose {
+    @apply max-w-none font-proxima;
+  }
+
+  .prose img {
+    @apply rounded-lg shadow-md;
+  }
+}
+
+.font-kazimir {
+  font-family: "Kazimir", serif;
+  font-weight: 400;
+}
+
+.font-proxima {
+  font-family: "Proxima Nova", "Montserrat", sans-serif;
+}
+
+/* Quill Editor Styles */
+.prose-container .ql-container {
+  @apply font-proxima text-base;
+  min-height: 200px;
+}
+
+.prose-container .ql-editor {
+  min-height: 200px;
+}
+
+.prose-container .ql-toolbar {
+  @apply border border-gray-200 rounded-t-md bg-white;
+}
+
+.prose-container .ql-container {
+  @apply border border-gray-200 rounded-b-md;
+}
+
+.prose-container .ql-editor h1,
+.prose-container .ql-editor h2,
+.prose-container .ql-editor h3,
+.prose-container .ql-editor h4,
+.prose-container .ql-editor h5,
+.prose-container .ql-editor h6 {
+  @apply font-kazimir;
+}
+
+.prose-container .ql-editor h1 {
+  @apply text-4xl;
+}
+
+.prose-container .ql-editor h2 {
+  @apply text-3xl;
+}
+
+.prose-container .ql-editor h3 {
+  @apply text-2xl;
+}
+
+.prose-container .ql-editor p {
+  @apply mb-4;
+}
+
+.prose-container .ql-editor ul,
+.prose-container .ql-editor ol {
+  @apply mb-4 pl-4;
+}
+
+.prose-container .ql-editor li {
+  @apply mb-2;
+}
+
+.prose-container .ql-editor img {
+  @apply max-w-full rounded-lg shadow-md;
+}
+
+.prose-container .ql-editor blockquote {
+  @apply border-l-4 border-charity-teal pl-4 italic my-4;
+}
+
+.prose-container .ql-editor pre {
+  @apply bg-gray-100 p-4 rounded-md my-4;
+}

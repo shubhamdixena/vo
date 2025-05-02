@@ -1,0 +1,36 @@
+/* Import Inter from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* Import Kazimir font */
+@font-face {
+  font-family: "Kazimir";
+  src: url("/assets/fonts/KazimirText-Book.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* System font stack as fallback */
+:root {
+  --font-sans:
+    Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: "Kazimir", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+/* Base font settings */
+html {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.font-kazimir {
+  font-family: "Kazimir", serif;
+}
+
+.font-proxima {
+  font-family: "Proxima Nova", "Inter", sans-serif;
+}
